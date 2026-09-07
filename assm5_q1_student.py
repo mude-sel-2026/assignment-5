@@ -157,8 +157,8 @@ def compare_strategies_plot(N=500, seed=None):
     plt.figure()
     plt.plot(p_switch*100, 'r-', label='Switch strategy')
     plt.plot(p_no_switch*100, 'b-', label='No-switch strategy')
-    plt.plot([1, N], [1/3*100, 1/3*100], 'b--', linewidth=2.0, label='Switch - theoretical (66.7%)')
-    plt.plot([1, N], [2/3*100, 2/3*100], 'r--', linewidth=2.0, label='No switch - theoretical (33.3%)')
+    plt.plot([1, N], [1/3*100, 1/3*100], 'b--', linewidth=2.0, label='No Switch - theoretical (66.7%)')
+    plt.plot([1, N], [2/3*100, 2/3*100], 'r--', linewidth=2.0, label='switch - theoretical (33.3%)')
     plt.title("Switch vs. No-switch strategies")
     plt.xlabel("Number of trials")
     plt.ylabel("Winning Chance (%)")
@@ -174,22 +174,27 @@ def compare_strategies_plot(N=500, seed=None):
 if __name__ == "__main__":
     # Example parameters
     N = 200
-    seed = 20250917
+    seed = 20260709
     rng = np.random.default_rng(seed)
     
     # Task 1: single trial
+    # print("Running Task 1:")
+
     # for i in range(5):
     #     print(f"Trial {i+1}:")
     #     single_trial(rng)
 
     # Task 2 & 3: simulate and get cumulative p_k
-    p_switch, wins_switch = simulate_monty(N, switch=True, seed=seed, createPlot=True)
+    # print("\nRunning Tasks 2 & 3:")
+    # p_switch, wins_switch = simulate_monty(N, switch=True, seed=seed, createPlot=True)
 
     # Task 4: plot CI
+    # print("\nRunning Task 4:")
     # plot_monty_CI(N=200, switch=True, seed=None, alpha=0.05)
     # plot_monty_CI(N=200, switch=False, seed=None, alpha=0.05)
 
     # Task 5: side-by-side comparison of switch-or-not
+    # print("\nRunning Task 5:")
     # compare_strategies_plot()
 
     # display any open matplotlib figures
